@@ -54,7 +54,6 @@ BEDROCK_MODEL_ARN = os.getenv(
 # --------------------------------------------------
 
 aws_session = boto3.Session(
-    profile_name="notebooklm",
     region_name=AWS_REGION
 )
 
