@@ -32,8 +32,11 @@ jobs:
       - name: Check Python syntax
         run: python -m compileall -q backend/app
 
-      - name: Verify FastAPI import
+           - name: Verify FastAPI import
+        env:
+          AWS_ACCESS_KEY_ID: testing
+          AWS_SECRET_ACCESS_KEY: testing
+          AWS_DEFAULT_REGION: ap-south-1
         run: |
           cd backend
-          python -c "from app.main import app; print('FastAPI application imported successfully')"
-
+          python -c "from app.main import app; print('FastAPI app imported successfully')"
