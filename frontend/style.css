@@ -1,0 +1,772 @@
+/* =========================================================
+   NOTEBOOKLM CLONE - MODERN BURGUNDY THEME
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --burgundy: #7a1f3d;
+    --burgundy-dark: #5c1530;
+    --burgundy-light: #f7e9ee;
+
+    --background: #f6f4f3;
+    --white: #ffffff;
+
+    --text: #242424;
+    --muted: #6f6f6f;
+
+    --border: #e3dfe0;
+
+    --shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   APP
+   ========================================================= */
+
+.app {
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    background: var(--white);
+
+    border-bottom: 1px solid var(--border);
+
+    padding: 28px 45px;
+}
+
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+
+.brand-icon {
+    width: 46px;
+    height: 46px;
+
+    background: var(--burgundy);
+
+    color: white;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 0;
+
+    position: relative;
+}
+
+
+/* Simple document logo without emoji */
+
+.brand-icon::after {
+    content: "";
+
+    width: 20px;
+    height: 25px;
+
+    border: 2px solid white;
+
+    border-radius: 3px;
+
+    position: absolute;
+}
+
+
+.brand h1 {
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color: var(--burgundy-dark);
+
+    margin-bottom: 5px;
+}
+
+
+.brand p {
+    font-size: 15px;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   MAIN WORKSPACE
+   ========================================================= */
+
+.workspace {
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding: 35px;
+
+    display: grid;
+
+    grid-template-columns:
+        300px
+        minmax(0, 1fr);
+
+    gap: 28px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    box-shadow: var(--shadow);
+
+    padding: 24px;
+
+    min-height: 650px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.sidebar-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid var(--border);
+
+    margin-bottom: 18px;
+}
+
+
+.sidebar-header h2 {
+    font-size: 18px;
+
+    color: var(--burgundy-dark);
+}
+
+
+.sidebar-header span {
+    background: var(--burgundy-light);
+
+    color: var(--burgundy);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   DOCUMENT LIST
+   ========================================================= */
+
+.document-list {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.empty-documents {
+    text-align: center;
+
+    color: var(--muted);
+
+    padding: 45px 15px;
+
+    line-height: 1.6;
+}
+
+
+.empty-icon {
+    display: none;
+}
+
+
+.document-item {
+    padding: 13px 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: #fff;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.document-item:hover {
+    border-color: var(--burgundy);
+
+    background: var(--burgundy-light);
+}
+
+
+.document-item.active {
+    border-color: var(--burgundy);
+
+    background: var(--burgundy-light);
+}
+
+
+.document-name {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: var(--text);
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   SIDEBAR UPLOAD
+   ========================================================= */
+
+.sidebar-upload {
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+
+    margin-top: 20px;
+}
+
+
+.sidebar-upload input[type="file"] {
+    width: 100%;
+
+    font-size: 13px;
+
+    margin-bottom: 12px;
+}
+
+
+.sidebar-upload button {
+    width: 100%;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button {
+    border: none;
+
+    background: var(--burgundy);
+
+    color: white;
+
+    padding: 12px 18px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease;
+}
+
+
+button:hover {
+    background: var(--burgundy-dark);
+}
+
+
+button:active {
+    transform: translateY(1px);
+}
+
+
+button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+.secondary-button {
+    background: white;
+
+    color: var(--burgundy);
+
+    border: 1px solid var(--burgundy);
+}
+
+
+.secondary-button:hover {
+    background: var(--burgundy-light);
+}
+
+
+/* =========================================================
+   CHAT AREA
+   ========================================================= */
+
+.chat-area {
+    min-width: 0;
+}
+
+
+.chat-header {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 25px 28px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.chat-header h2 {
+    color: var(--burgundy-dark);
+
+    font-size: 21px;
+
+    margin-bottom: 6px;
+}
+
+
+.chat-header p {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   CHAT SECTION
+   ========================================================= */
+
+.chat-section {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    min-height: 430px;
+
+    padding: 28px;
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 20px;
+}
+
+
+.chat-messages {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    min-height: 370px;
+}
+
+
+.welcome-message {
+    min-height: 350px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: var(--muted);
+}
+
+
+.welcome-icon {
+    display: none;
+}
+
+
+.welcome-message h2 {
+    color: var(--burgundy-dark);
+
+    font-size: 24px;
+
+    margin-bottom: 10px;
+}
+
+
+.welcome-message p {
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   CHAT MESSAGES
+   ========================================================= */
+
+.chat-message {
+    padding: 16px 19px;
+
+    border-radius: 12px;
+
+    max-width: 82%;
+
+    line-height: 1.65;
+
+    white-space: pre-wrap;
+
+    font-size: 15px;
+}
+
+
+.user-message {
+    align-self: flex-end;
+
+    background: var(--burgundy);
+
+    color: white;
+
+    border-bottom-right-radius: 3px;
+}
+
+
+.ai-message {
+    align-self: flex-start;
+
+    background: #f7f5f5;
+
+    color: var(--text);
+
+    border: 1px solid var(--border);
+
+    border-left: 4px solid var(--burgundy);
+
+    border-bottom-left-radius: 3px;
+}
+
+
+/* =========================================================
+   SOURCES
+   ========================================================= */
+
+.sources-section {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 25px 28px;
+
+    margin-bottom: 20px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.sources-header {
+    margin-bottom: 18px;
+}
+
+
+.sources-header h2 {
+    color: var(--burgundy-dark);
+
+    font-size: 20px;
+}
+
+
+.source {
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    padding: 17px;
+
+    margin-bottom: 12px;
+
+    background: #fff;
+}
+
+
+.source:last-child {
+    margin-bottom: 0;
+}
+
+
+.source-title {
+    color: var(--burgundy-dark);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+
+.source-text {
+    color: #555;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   QUESTION BOX
+   ========================================================= */
+
+.question-box {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 22px 25px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.question-box textarea {
+    width: 100%;
+
+    resize: vertical;
+
+    min-height: 90px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    color: var(--text);
+
+    outline: none;
+}
+
+
+.question-box textarea:focus {
+    border-color: var(--burgundy);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(122, 31, 61, 0.1);
+}
+
+
+.question-box textarea::placeholder {
+    color: #999;
+}
+
+
+.question-actions {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 14px;
+
+    gap: 15px;
+}
+
+
+.hint {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   UPLOAD STATUS
+   ========================================================= */
+
+#uploadStatus {
+    margin-top: 10px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .workspace {
+        grid-template-columns: 1fr;
+
+        padding: 20px;
+    }
+
+
+    .sidebar {
+        min-height: auto;
+    }
+
+
+    .document-list {
+        max-height: 200px;
+
+        overflow-y: auto;
+    }
+
+
+    .chat-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 22px;
+    }
+
+
+    .workspace {
+        padding: 15px;
+    }
+
+
+    .chat-message {
+        max-width: 95%;
+    }
+
+
+    .question-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .question-actions button {
+        width: 100%;
+    }
+
+
+    .hint {
+        text-align: center;
+    }
+
+}
+.document-item {
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.document-item:hover {
+    border-color: #7a1f3d;
+}
+
+.document-item.selected-document {
+    border-color: #7a1f3d;
+    background: #f7e9ee;
+}

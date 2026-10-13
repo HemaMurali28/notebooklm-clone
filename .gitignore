@@ -6,3 +6,27 @@ node_modules/
 cdk.out/
 .aws-sam/
 *.pyc
+# Environment variables and secrets
+.env
+.env.*
+
+# Python virtual environments
+backend/venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# AWS credentials
+.aws/
+
+# Test cache
+.pytest_cache/
+
+# IDE settings
+.vscode/
+# Uploaded documents
+backend/uploads/*
+
+# Keep the uploads folder available in the project
+!backend/uploads/.gitkeep

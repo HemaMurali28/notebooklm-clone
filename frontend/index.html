@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>NotebookLM Clone</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+    <div class="app">
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="header">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    📚
+                </div>
+
+                <div>
+                    <h1>NotebookLM Clone</h1>
+
+                    <p>
+                        AI-powered document question answering
+                    </p>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= MAIN ================= -->
+
+        <main class="workspace">
+
+
+            <!-- ============== SIDEBAR ============== -->
+
+            <aside class="sidebar">
+
+                <div class="sidebar-header">
+
+                    <h2>Documents</h2>
+
+                    <span id="documentCount">
+                        0
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="documentList"
+                    class="document-list"
+                >
+
+                    <div class="empty-documents">
+
+                        <div class="empty-icon">
+                            📄
+                        </div>
+
+                        <p>
+                            No documents uploaded yet.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Upload -->
+
+                <div class="sidebar-upload">
+
+                    <input
+                        type="file"
+                        id="fileInput"
+                        accept=".pdf,.docx,.txt"
+                    >
+
+                    <button
+                        id="uploadButton"
+                        onclick="uploadDocument()"
+                    >
+                        📎 Upload Document
+                    </button>
+
+                    <p id="uploadStatus"></p>
+
+                </div>
+
+            </aside>
+
+
+
+            <!-- ============== CHAT AREA ============== -->
+
+            <section class="chat-area">
+
+
+                <!-- Chat Header -->
+
+                <div class="chat-header">
+
+                    <div>
+
+                        <h2>
+                             Ask about your documents
+                        </h2>
+
+                        <p>
+                            Ask questions and get answers
+                            grounded in your documents.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        id="clearChatButton"
+                        class="secondary-button"
+                        onclick="clearChat()"
+                    >
+                        Clear Chat
+                    </button>
+
+                </div>
+
+
+
+                <!-- Chat Messages -->
+
+                <section
+                    id="chatSection"
+                    class="chat-section"
+                >
+
+                    <div
+                        id="chatMessages"
+                        class="chat-messages"
+                    >
+
+                        <div class="welcome-message">
+
+                            <div class="welcome-icon">
+                                
+                            </div>
+
+                            <h2>
+                                Welcome to NotebookLM Clone
+                            </h2>
+
+                            <p>
+                                Upload a document and ask
+                                questions about it.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- Sources -->
+
+                <section
+                    id="sourcesSection"
+                    class="sources-section"
+                    style="display: none;"
+                >
+
+                    <div class="sources-header">
+
+                        <h2>
+                             Sources
+                        </h2>
+
+                    </div>
+
+
+                    <div id="sources"></div>
+
+                </section>
+
+
+
+                <!-- Question Box -->
+
+                <section class="question-box">
+
+                    <textarea
+                        id="questionInput"
+                        placeholder="Ask something about your document..."
+                        rows="3"
+                    ></textarea>
+
+
+                    <div class="question-actions">
+
+                        <span class="hint">
+                            Press Ask Question to search
+                            your knowledge base.
+                        </span>
+
+
+                        <button
+                            id="askButton"
+                            onclick="askQuestion()"
+                        >
+                             Ask Question
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
